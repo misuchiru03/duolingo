@@ -1,9 +1,10 @@
-const headers = {
-  'Content-Type': 'application/json',
+const headers = { 'Content-Type': 'application/json',
   Authorization: `Bearer ${process.env.DUOLINGO_JWT}`,
   'user-agent':
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36',
 }
+
+console.log(process.env.DUOLINGO_JWT);
 
 const { sub } = JSON.parse(
   Buffer.from(process.env.DUOLINGO_JWT.split('.')[1], 'base64').toString(),
